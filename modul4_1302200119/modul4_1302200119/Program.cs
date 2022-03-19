@@ -10,6 +10,39 @@ namespace modul4_1302200119
     {
         static void Main(string[] args)
         {
+            SimpleDataBase<long> simpleData = new SimpleDataBase<long>();
+
+            simpleData.AddNewData(13);
+            simpleData.AddNewData(02);
+            simpleData.AddNewData(20);
+            simpleData.PrintAllData();
+        }
+    }
+
+    class SimpleDataBase<T>
+    {
+        private List<T> storedData;
+        private List<DateTime> inputDates;
+
+        public SimpleDataBase()
+        {
+            this.storedData = new List<T>();
+            this.inputDates = new List<DateTime>();
+        }
+
+        public void AddNewData(T data)
+        {
+            storedData.Add(data);
+            inputDates.Add(DateTime.Now);
+        }
+
+        public void PrintAllData()
+        {
+            for (int i = 0; i < storedData.Count; i++)
+            {
+                Console.WriteLine("Data "+(i+1)+" berisi: "+storedData[i]
+                    +", yang disimpan pada waktu UTC: "+inputDates[i]);
+            }
         }
     }
 }
