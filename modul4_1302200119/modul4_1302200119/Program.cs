@@ -10,6 +10,18 @@ namespace modul4_1302200119
     {
         static void Main(string[] args)
         {
+            Penjumlahan.JumlahTigaAngka<long>(13, 02, 20);
+        }
+    }
+
+    class Penjumlahan
+    {
+        public static void JumlahTigaAngka<T>(T angka1, T angka2, T angka3)
+        {
+            dynamic n1 = angka1;
+            dynamic n2 = angka2;
+            dynamic n3 = angka3;
+            Console.WriteLine(n1 + n2 + n3);
         }
     }
 }
